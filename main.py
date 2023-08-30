@@ -1,16 +1,27 @@
-# This is a sample Python script.
+# !/
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from coin_gecko import ping, coin_list, simple_price, coin_markets
+import time
 
+# ping()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# coin_list = coin_list()
 
+my_symbol_list = ['eth', 'btc', 'link', 'doge', 'sol', 'arb']
+# my_id_list = []
+coin_dict = {
+}
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# for coin in coin_list:
+#     for my_coin in my_symbol_list:
+#         if coin['symbol'] == my_coin:
+#             my_id_list.append(coin['id'])
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# for coin_id in my_id_list:
+#     print(simple_price(coin_id))
+
+my_id_list = ['bitcoin', 'chainlink', 'dogecoin', 'ethereum', 'arbitrum', 'solana']
+while True:
+    for coin_id in my_id_list:
+        coin_markets(coin_id)
+        time.sleep(30)
